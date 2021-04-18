@@ -36,7 +36,7 @@ from tobrot.helper_funcs.youtube_dl_extractor import extract_youtube_dl_formats
 from tobrot.helper_funcs.ytplaylist import yt_playlist_downg
 
 
-async def incoming_purge_message_f(client, message):
+async def incoming_purge_message_fd(client, message):
     """/purge command"""
     print(message.client)
     i_m_sefg2 = await message.reply_text("Purging...", quote=True)
@@ -49,7 +49,7 @@ async def incoming_purge_message_f(client, message):
     await i_m_sefg2.delete()
 
 
-async def incoming_message_f(client, message):
+async def incoming_message_fd(client, message):
     """/leech command or /gleech command"""
     user_command = message.command[0]
     g_id = message.from_user.id
@@ -123,7 +123,7 @@ async def incoming_message_f(client, message):
         )
 
 
-async def incoming_youtube_dl_f(client, message):
+async def incoming_youtube_dwn_f(client, message):
     """ /ytdl command """
     current_user_id = message.from_user.id
     credit = await message.reply_text(
@@ -214,7 +214,7 @@ async def g_yt_playlist(client, message):
 #
 
 
-async def g_clonee(client, message):
+async def g_clude(client, message):
     """ /gclone command """
     g_id = message.from_user.id
     if message.reply_to_message is not None:
