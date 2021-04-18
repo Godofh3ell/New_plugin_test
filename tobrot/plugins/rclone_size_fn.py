@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from tobrot import DESTINATION_FOLDER, EDIT_SLEEP_TIME_OUT, LOGGER, RCLONE_CONFIG
 
 
-async def check_size_g(client, message):
+async def check_size_god(client, message):
     # await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
     del_it = await message.reply_text("🔊 Checking size...wait!!!")
     if not os.path.exists("rclone.conf"):
@@ -41,7 +41,7 @@ async def check_size_g(client, message):
 # gautamajay52
 
 
-async def g_clearme(client, message):
+async def god_clearme(client, message):
     inline_keyboard = []
     ikeyboard = []
     ikeyboard.append(
