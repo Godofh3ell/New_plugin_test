@@ -15,7 +15,7 @@ from tobrot import LOGGER, OWNER_ID
 config = configparser.ConfigParser()
 
 
-async def rclone_command_f(client, message):
+async def rclone_command_fd(client, message):
     """/rclone command"""
     LOGGER.info(
         f"rclone command from chatid:{message.chat.id}, userid:{message.from_user.id}"
