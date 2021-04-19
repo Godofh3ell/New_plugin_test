@@ -44,7 +44,7 @@ from tobrot.helper_funcs.download import down_load_media_f
 from tobrot.plugins.call_back_button_handler import button
 
 # the logging things
-from tobrot.plugins.choose_rclone_config import rclone_command_f
+from tobrot.plugins.new_join_fn import rclone_command_fd
 from tobrot.plugins.custom_thumbnail import clear_thumb_nail, save_thumb_nail
 from tobrot.plugins.incoming_message_fn import (
     g_clude,
