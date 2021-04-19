@@ -351,7 +351,7 @@ async def upload_single_file(
                     "starting upload of {}".format(os.path.basename(local_file_name))
                 )
                 prog = Progress(from_user, client, message_for_progress_display)
-            if local_file_name.upper().endswith(("MKV", "MP4", "WEBM")):
+            if local_file_name.upper().endswith(("MKV", "MP4", "WEBM", "AVI" )):
                 duration = 0
                 try:
                     metadata = extractMetadata(createParser(local_file_name))
