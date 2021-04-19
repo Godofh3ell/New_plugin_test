@@ -28,3 +28,48 @@ async def help_message_f(client, message):
         """join this group for help-- @GbotStoreSupport\n\n And also don't forget to star/fork this repo: <a href="https://github.com/gautamajay52/TorrentLeech-Gdrive">TorrentLeech-Gdrive</a>""",
         disable_web_page_preview=True,
     )
+    
+    
+async def rclone_button_callback(bot, update: CallbackQuery):
+
+    """rclone button callback"""
+
+    if update.data == "rcloneCancel":
+
+        config.read("rclone.conf")
+
+        section = config.sections()[0]
+
+        await update.message.edit_text(
+
+            f"Opration canceled! \n\nThe default section of rclone config is: **{section}**"
+
+        )
+
+        LOGGER.info(
+
+            f"Opration canceled! The default section of rclone config is: {section}"
+
+        )
+
+    else:
+
+        section = update.data.split("_", maxsplit=1)[1]
+
+        with open("rclone.conf", "w", newline="\n", encoding="utf-8") as f:
+
+            config.read("rclone_bak.conf")
+
+            temp = configparser.ConfigParser()
+
+            temp[section] = config[section]
+
+            temp.write(f)
+
+        await update.message.edit_text(
+
+            f"Default rclone config changed to **{section}**"
+
+        )
+
+        LOGGER.info(f"Default rclone config changed to {section}")
